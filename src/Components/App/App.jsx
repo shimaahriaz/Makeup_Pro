@@ -24,13 +24,8 @@ function App() {
 
   function informUserData() {
     const userDataIncode = localStorage.getItem("userToken");
-    // const userDataDecode = jwtDecode(userDataIncode);
-
     setUserData(userDataIncode);
-    // console.log(userDataDecode.first_name);
-    // console.log(userDataDecode.last_name);
-    // console.log(userDataDecode.email);
-    // console.log(userDataDecode);
+    
   }
 
   useEffect(() => {
