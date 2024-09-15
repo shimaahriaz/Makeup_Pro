@@ -62,7 +62,62 @@ const Details = () => {
                   <IoLogoInstagram />
                   <FiFacebook />
                 </div>
-               
+                <div className="img-details">
+                  <img src={data.image_link} alt="" className="img-fluid" />
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-5 info-imgDetails ps-5 mt-5">
+              <h2>{data.name}</h2>
+              <p>{data.description}</p>
+              <div className="d-flex justify-content-between align-items-center">
+                <p className="price-details">
+                  <span>Price: </span>
+                  {data.price + "$"}
+                </p>
+                <div className="">
+                  <button
+                    className="btn mienus"
+                    onClick={handleDecrementQuantity}
+                    disabled={isMinQuantity}
+                  >
+                    -
+                  </button>
+                  <span className="number">{count}</span>
+                  <button
+                    className="btn plus"
+                    onClick={handleIncrementQuantity}
+                    disabled={isMaxQuantity}
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+              <div></div>
+              {addedToCart && <p className="message">Item added to cart</p>}
+              <button
+                className="btn btn-info btn-addCart"
+                onClick={handleAddToCart}
+              >
+                Add To Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+      <div className="container my-5">
+        <div className="row align-items-center justify-content-center pb-0">
+          <div className="col-lg-6 details-info">
+            <p>
+              Cosmetic lines created for the love of what is natural. Lines
+              include cosmetics for face, body and hair care, everything you
+              need, regardless of age.
+            </p>
+            <button onClick={goToAboutUs}>Reed More</button>
+          </div>
+         
       </div>
     </>
   );
