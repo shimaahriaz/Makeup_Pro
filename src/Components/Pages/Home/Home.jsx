@@ -180,7 +180,35 @@ const Home = (props) => {
           </div>
         </div>
       </section>
-     
+      <section>
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-lg-6">
+              <div className="title_home">
+                <h2>Retail Products</h2>
+                <p>
+                  Cosmetic lines created for the love of what is natural. Lines
+                  include cosmetics for face, body and hair care, everything you
+                  need, regardless of age.
+                </p>
+                <p onClick={goToShop} className="arrowRight_home">
+                  Find More
+                  <span>
+                    <AiOutlineArrowRight className="fs-4 ms-1" />
+                  </span>
+                </p>
+                <p className="line-home"></p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div className="img_home">
+                <img src={img7} class="img-fluid rounded-start" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
     </>
   );
 };
