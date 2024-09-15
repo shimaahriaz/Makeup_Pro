@@ -127,7 +127,15 @@ const Home = (props) => {
         ))}
       </Carousel>
 
-     
+      <div className="container">
+        <div className="textHome d-flex justify-content-between align-items-center">
+          <h2 className="beautyHome">Clean Beauty</h2>
+          <button onClick={goToShop} className="btn btnHome">
+            See More
+          </button>
+        </div>
+      </div>
+      
     </>
   );
 };
