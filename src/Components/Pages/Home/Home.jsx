@@ -208,7 +208,135 @@ const Home = (props) => {
           </div>
         </div>
       </section>
-      
+      <section className="naturel-section">
+        <div className="container">
+          <div className=" col-lg-6 text_meakup">
+            <h2 className="">Natural makeup products, step by step</h2>
+            <p>
+              Made from natural ingredients: Natural makeup products are made
+              from natural ingredients like plant extracts, minerals, and oils.
+              These ingredients are generally considered to be safe and gentle
+              on the skin.
+            </p>
+          </div>
+          <div className="row g-3 align-items-center mt-4">
+            <div className="col-lg-4">
+              <div className="img-natural">
+                <img src={img5} alt="" className="img-fluid" />
+              </div>
+            </div>
+
+            <div className="col-lg-4">
+              <div className="text-natural">
+                <p>
+                  Free from harsh chemicals: Natural makeup products are free
+                  from harsh chemicals like parabens, sulfates, and synthetic
+                  fragrances. These chemicals can irritate the skin and cause
+                  allergic reactions.
+                </p>
+                <p onClick={goToBlog} className="read_more">
+                  Read More
+                  <span>
+                    <AiOutlineArrowRight className="fs-4 ms-1" />
+                  </span>
+                </p>
+              </div>
+            </div>
+
+            <div className="col-lg-4">
+              <div className="img-natural">
+                <img src={imag3} alt="" className="img-fluid" />
+              </div>
+            </div>
+            <div className="col-lg-4 mt-2">
+              <div className="img-natural">
+                <img src={imag} alt="" className="img-fluid" />
+              </div>
+            </div>
+            <div className="col-lg-4 mt-2">
+              <div className="img-natural">
+                <img src={img4} alt="" className="img-fluid" />
+              </div>
+            </div>
+            <div className="col-lg-4 mt-2">
+              <div className="img-natural">
+                <img src={img1} alt="" className="img-fluid" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-lg-4 d-flex mb-5">
+              
+                <div className="circleIcon_home">
+                  <p>
+                    <HiOutlineShoppingCart className="icone_shopingcart" />
+                  </p>
+                </div>
+                <div className="adventages_us">
+                  <h4>Delivery</h4>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Temporibus, dignissimos!
+                  </p>
+                </div>
+              </div>
+          
+			<div className="col-lg-4 d-flex mb-5">
+             
+                <div className="circleIcon_home">
+                  <p>
+                    <BsChatHeart className="icone_shopingcart" />
+                  </p>
+                </div>
+                <div className="adventages_us">
+                  <h4>Products</h4>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Temporibus, dignissimos!
+                  </p>
+                </div>
+              </div>
+            
+			<div className="col-lg-4 d-flex mb-5">
+              
+                <div className="circleIcon_home">
+                  <p>
+                    <CiBadgeDollar className="icone_shopingcart" />
+                  </p>
+                </div>
+                <div className="adventages_us">
+                  <h4>Payments</h4>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Temporibus, dignissimos!
+                  </p>
+                </div>
+             
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="titlemakeup-home">
+          <div className="title-home">
+          <h2>"Celebrate Your Natural Beauty with Natural Makeup"</h2>
+        </div>
+    
+
+        <div className= 'row align-items-center'>
+          {makeup.map((img,index)=>
+          <div className= 'col-lg-3 px-0 img-footer' key= {index}>
+            <img src={img.img} className="img-fluid" alt= ""/>
+          </div>
+          )}
+        </div>
+        <div className="title-home">
+          <h2>"Thanks For Watching"</h2>
+        </div>
+      </section>
     </>
   );
 };
