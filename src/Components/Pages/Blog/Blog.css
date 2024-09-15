@@ -155,7 +155,6 @@
     text-overflow: ellipsis;
 }
 
-
 .pagination {
     display: flex;
     justify-content: center !important;
@@ -176,7 +175,6 @@
     color: #d99236;
     text-decoration: none !important;
 }
-
 
 .pagination li:hover {
     background-color: var(--bgCart);
