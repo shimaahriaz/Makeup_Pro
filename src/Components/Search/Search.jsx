@@ -45,9 +45,17 @@ const Search = () => {
     navigate(`/details?id=${id}`)
   };
 
-  
+  const totalItemsCount = data.length;
+  const pageRangeDisplayed = 5;
+  const totalPageCount = Math.ceil(totalItemsCount / itemsPerPage);
 
-  
+  const indexOfLastItem = activePage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
+
+  const handlePageChange = (pageNumber) => {
+    setActivePage(pageNumber);
+  }
 
     return(
         <>
@@ -102,7 +110,13 @@ const Search = () => {
       <p>No products found.</p>
     )}
      </div>
-     
+     <Pagination
+  activePage={activePage}
+  totalItemsCount={totalItemsCount}
+  pageRangeDisplayed={pageRangeDisplayed}
+  totalPageCount={totalPageCount}
+  onChange={handlePageChange}
+/>
   </div>
   </div>
   
