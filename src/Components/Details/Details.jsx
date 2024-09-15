@@ -33,7 +33,15 @@ const Details = () => {
   const [data, setData] = useState({});
   const [search, setSearch] = useSearchParams();
 
-  
+  async function showData() {
+    try {
+      let result = await axios.get("newProducts.json");
+      result = result.data.find((item) => item.id === +search.get("id"));
+      setData(result);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -44,7 +52,37 @@ const Details = () => {
     showData();
   });
 
- 
+  const handleAddToCart = () => {
+    dispatch(addToCart({ ...data, quantity: countQuintity, counter: count }));
+    setAddedToCart(true);
+    setTimeout(() => {
+      setAddedToCart(false);
+    }, 3000);
+  };
+
+  const handleDecrementQuantity = () => {
+    if (count > 1) {
+      setCount(count - 1);
+    }
+  };
+
+  const handleIncrementQuantity = () => {
+    if (count < 5) {
+      setCount(count + 1);
+    }
+  };
+
+  const isMinQuantity = count === 1;
+  const isMaxQuantity = count === 5;
+
+  const handleClickHeart = () => {
+    if (countHeart > 0) {
+      setCountHeart(countHeart - 1);
+    } else {
+      setCountHeart(countHeart + 1);
+    }
+  };
+
   const navigate = useNavigate();
   function goToAboutUs() {
     navigate("/about");
@@ -117,7 +155,29 @@ const Details = () => {
             </p>
             <button onClick={goToAboutUs}>Reed More</button>
           </div>
-         
+          <div className="col-lg-6 img-details px-0">
+            <img src={imag} className="img-fluid" alt="" />
+          </div>
+        </div>
+        <div className="row align-items-center justify-content-center pt-0">
+          <div className="col-lg-6 img-details px-0">
+            <img src={img} className="img-fluid" alt="" />
+          </div>
+          <div className="col-lg-6 details-info ">
+            <p>
+             
+              Cosmetic lines created for the love of what is natural. Lines
+              include cosmetics for face, body and hair care, everything you
+              need, regardless of age.
+            </p>
+            <p>
+              Cosmetic lines created for the love of what is natural. Lines
+              include cosmetics for face, body and hair care, everything you
+              need, regardless of age.
+            </p>
+            <button onClick={goToAboutUs}>Reed More</button>
+          </div>
+        </div>
       </div>
     </>
   );
