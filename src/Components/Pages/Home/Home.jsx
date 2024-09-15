@@ -135,7 +135,52 @@ const Home = (props) => {
           </button>
         </div>
       </div>
-      
+      <section className="sectionHome">
+        <div className="container">
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            {productList.map((item, index) => (
+              <div className="col-md-3">
+                <div className="card cardHome h-100">
+                  <div className="box-home-img">
+                    <span className="heart_home" onClick={()=> goToDetails(item.id)}>
+                      <AiTwotoneHeart className=" fs-4" />
+                    </span>
+                    <img onClick={()=> goToDetails(item.id)}
+                      src={item.image_link}
+                      key={item.id}
+                      className="card-img-top img-blog img-fluid"
+                      alt=""
+                    />
+                  </div>
+                  <div className="card-body">
+                    <h6 className="brandImgHome">
+                      {item.category ? item.category : "Shawdo"}
+                    </h6>
+
+                    <p className="descImg-Home">
+                      {item.description
+                        ? item.description
+                        : "Different because of its smooth, comfortable feel."}
+                    </p>
+                    <div className=" d-flex justify-content-between align-items-center">
+                      <div className="priceShop">
+                        <h4 className="priceHome">
+                          {item.price + item.price_sign? item.price + item.price_sign : "10$"}
+                        </h4>
+                        <p className="circlePrice"></p>
+                      </div>
+                      <span className="icon-shopHome" onClick={()=> goToDetails(item.id)}>
+                        <FaShoppingBasket className=" fs-4" />
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+     
     </>
   );
 };
