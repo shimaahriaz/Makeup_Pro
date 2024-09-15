@@ -1,13 +1,13 @@
 import React from "react";
 import axios from "axios";
 import { useState } from "react";
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link } from "react-router-dom";
 import { useEffect } from "react";
 import Slider from "@mui/material/Slider";
 import Pagination from "react-js-pagination";
 import { FaShoppingBasket } from "react-icons/fa";
 import { AiTwotoneHeart } from "react-icons/ai";
-import images from '../../../images/images.jpeg';
+import images from "../../../images/images.jpeg";
 import "./Shop.css";
 
 const Shop = () => {
@@ -170,7 +170,6 @@ const Shop = () => {
     showData();
   }, []);
 
-
   useEffect(() => {
     const filteredData = data.filter((item) => {
       let isBrandSelected =
@@ -190,8 +189,6 @@ const Shop = () => {
       );
     });
 
-     
-  
     // set the total items count and total page count for pagination
     setTotalItemsCount(filteredData.length);
     setTotalPageCount(Math.ceil(filteredData.length / pageRangeDisplayed));
@@ -211,25 +208,21 @@ const Shop = () => {
   ]);
 
   useEffect(() => {
-    setActivePage(1)
-  }, [selectedBrands,
-    selectedCategory,
-    selectedProductTpe,
-    range,])
+    setActivePage(1);
+  }, [selectedBrands, selectedCategory, selectedProductTpe, range]);
 
   const handlePageChange = (pageNumber) => {
     setActivePage(pageNumber);
   };
 
-  const navigate= useNavigate();
-   function goToDetails(id){
-    navigate(`/details?id=${id}`)
-   }
+  const navigate = useNavigate();
+  function goToDetails(id) {
+    navigate(`/details?id=${id}`);
+  }
 
-   useEffect(() => {
+  useEffect(() => {
     window.scrollTo(0, 0);
   }, [window.location.pathname]);
-
 
   return (
     <>
@@ -446,9 +439,7 @@ const Shop = () => {
                       />
                     </div>
                     <div className="card-body">
-                      <h6 className="brandImgHome">
-                        {item.category}
-                      </h6>
+                      <h6 className="brandImgHome">{item.category}</h6>
 
                       <p className="descImg-Home">
                         {item.description
@@ -460,7 +451,10 @@ const Shop = () => {
                           <h4 className="priceHome">{item.price + "$"}</h4>
                           <p className="circlePrice"></p>
                         </div>
-                        <span className="icon-shopHome" onClick={()=> goToDetails(item.id)}>
+                        <span
+                          className="icon-shopHome"
+                          onClick={() => goToDetails(item.id)}
+                        >
                           <FaShoppingBasket className=" fs-4" />
                         </span>
                       </div>
@@ -478,7 +472,9 @@ const Shop = () => {
                 onChange={handlePageChange}
               />
             ) : (
-              <p className="not-found">OOPS..<b>Not Found</b></p>
+              <p className="not-found">
+                OOPS..<b>Not Found</b>
+              </p>
             )}
           </div>
         </div>
