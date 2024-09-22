@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import  axios  from 'axios';
+// import  axios  from 'axios';
 import { useNavigate } from "react-router-dom";
 import Joi from 'joi';
 import { PiPasswordBold } from "react-icons/pi";
 import { TfiEmail } from "react-icons/tfi";
-import img from "../../../images/Login.jpg";
+// import img from "../../../images/Login.jpg";
 import  "./Login.css";
 
 
