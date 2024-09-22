@@ -19,8 +19,8 @@
 }
 
 .product-icons svg {
-  font-size: 28px;
-  color: white;
+  font-size: 38px;
+  color: rgb(220, 226, 235);
   margin: 10px;
 }
 
@@ -30,7 +30,7 @@
 }
 
 
-.info-imgDetails h2 {
+.info-imgDetails h3 {
   font-family: none;
   margin-bottom: 1rem !important;
   font-weight: bold !important;
@@ -39,7 +39,7 @@
 .info-imgDetails p {
   display: -webkit-box;
   -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   overflow: hidden;
   text-overflow: ellipsis;
   font-family: auto;
