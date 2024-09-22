@@ -116,12 +116,12 @@ const Details = () => {
                 <div className="">
                   <button
                     className="btn mienus"
-                    onClick={handleDecrementQuantity}
+                    onClick={handleIncrementQuantity}
                     disabled={isMinQuantity}
                   >
                     -
                   </button>
-                  <span className="number">{count}</span>
+                  <span className="number">{countHeart}</span>
                   <button
                     className="btn plus"
                     onClick={handleIncrementQuantity}
