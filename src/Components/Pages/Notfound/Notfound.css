@@ -1,5 +1,30 @@
-.notfound{
+.notfound {
     padding-top: 5rem;
     display: flex;
     flex-direction: row;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa;
+}
+
+.notfound h1 {
+    font-size: 2.5rem;
+    color: #343a40;
+}
+
+.notfound p {
+    font-size: 1.25rem;
+    color: #6c757d;
+}
+
+.notfound button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.notfound-img {
+    max-width: 100%;
+    height: auto;
 }
